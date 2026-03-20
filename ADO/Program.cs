@@ -10,17 +10,26 @@ namespace ADO
 {
 	internal class Program
 	{
+		static string connection_string = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Movies_PV_521;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 		static void Main(string[] args)
 		{
-			string connection_string = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Movies_PV_521;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 			Console.WriteLine(connection_string);
 
 			SqlConnection connection = new SqlConnection(connection_string);
 			connection.Open();
 
-			string cmd = 
+			PrintTable(connection);
+			Scalar(connection);
+			connection.Close();
+
+		}
+		static void PrintTable(SqlConnection connection)
+		{
+
+			string cmd =
 				"SELECT movie_id,title, release_date,first_name,last_name FROM Movies," +
 				" Directors WHERE director=director_id";
+
 			SqlCommand command = new SqlCommand(cmd, connection);
 
 			SqlDataReader reader = command.ExecuteReader();
@@ -41,10 +50,14 @@ namespace ADO
 			}
 			reader.Close();
 
-			command.CommandText = "SELECT COUNT(*) FROM Movies";
-			Console.WriteLine($"Колличество записей:\t{command.ExecuteScalar()}");
+		}
 
-			connection.Close();
+		static void Scalar(SqlConnection connection)
+		{
+			
+			SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Movies", connection);
+			Console.WriteLine($"Количество записей:\t{command.ExecuteScalar()}");
+
 		}
 	}
 }
