@@ -6,58 +6,41 @@ using System.Threading.Tasks;
 
 using System.Data.SqlClient;
 
-namespace ADO
+namespace PV_521_ADO
 {
-	internal class Program
+	class Program
 	{
-		static string connection_string = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Movies_PV_521;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 		static void Main(string[] args)
 		{
-			Console.WriteLine(connection_string);
+			string connection_string = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Movies_PV_521;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-			SqlConnection connection = new SqlConnection(connection_string);
-			connection.Open();
+			Connector connector = new Connector(connection_string);
 
-			PrintTable(connection);
-			Scalar(connection);
-			connection.Close();
+			connector.Insert("INSERT Directors (first_name,last_name) VALUES (N'Guy', N'Richie');");
 
-		}
-		static void PrintTable(SqlConnection connection)
-		{
+			Console.WriteLine($"PK Max:\t{connector.GetMaxPrimaryKey("Directors")}");
 
-			string cmd =
-				"SELECT movie_id,title, release_date,first_name,last_name FROM Movies," +
-				" Directors WHERE director=director_id";
+			//string cmd ="SELECT movie_id,title,release_date,first_name,last_name FROM Movies,Directors WHERE director=director_id";
+			//connector.Select(cmd);
 
-			SqlCommand command = new SqlCommand(cmd, connection);
+			connector.Select("*", "Directors");
+			Console.WriteLine($"Количество записей: {connector.Scalar("SELECT COUNT(*) FROM Directors")}");
 
-			SqlDataReader reader = command.ExecuteReader();
-			for (int i = 0; i < reader.FieldCount; i++)
-			{
-				Console.Write(reader.GetName(i) + "\t");
-			}
-			Console.WriteLine();
+			connector.Select
+				(
+				"title,release_date,first_name,last_name",
+				"Movies,Directors",
+				"director=director_id"
+				);
+			Console.WriteLine($"Количество записей: {connector.Scalar("SELECT COUNT(*) FROM Movies")}");
 
-			while (reader.Read())
-			{
-				//Console.WriteLine($"{reader[0]}\t{reader[1]}\t{reader[2]}\t{reader[3]}");
-				for (int i = 0; i<reader.FieldCount; i++)
-				{
-					Console.Write($"{reader[i]}\t\t");
-				}
-				Console.WriteLine();
-			}
-			reader.Close();
+			string pkName = connector.GetPrimaryKeyName("Directors");
+			Console.WriteLine($"Имя первичного ключа:{pkName}");
 
-		}
+			//command.CommandText = "SELECT COUNT(*) FROM Movies";
+			//Console.WriteLine($"Количество записей:\t{command.ExecuteScalar()}");
 
-		static void Scalar(SqlConnection connection)
-		{
-			
-			SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Movies", connection);
-			Console.WriteLine($"Количество записей:\t{command.ExecuteScalar()}");
-
+			//connection.Close();
 		}
 	}
 }
