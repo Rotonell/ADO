@@ -16,7 +16,15 @@ namespace PV_521_ADO
 
 			Connector connector = new Connector(connection_string);
 
-			connector.Insert("INSERT Directors (first_name,last_name) VALUES (N'Guy', N'Richie');");
+			//connector.Insert($@"INSERT Directors (director_id,first_name,last_name)
+			//	VALUES ({connector.GetNextPrimaryKey("Directors")}, N'Guy', N'Richie');");
+
+			connector.Insert
+				(
+				"Directors",
+				"director_id,first_name,last_name",
+				$"{connector.GetNextPrimaryKey("Directors")},John, Singleton"
+				);
 
 			Console.WriteLine($"PK Max:\t{connector.GetMaxPrimaryKey("Directors")}");
 
@@ -34,8 +42,8 @@ namespace PV_521_ADO
 				);
 			Console.WriteLine($"Количество записей: {connector.Scalar("SELECT COUNT(*) FROM Movies")}");
 
-			string pkName = connector.GetPrimaryKeyName("Directors");
-			Console.WriteLine($"Имя первичного ключа:{pkName}");
+			Console.WriteLine($"Имя первичного ключа:{connector.GetPrimaryKeyName("Directors")}");
+			Console.WriteLine($"Имя первичного ключа:{connector.GetPrimaryKeyName("Movies")}");
 
 			//command.CommandText = "SELECT COUNT(*) FROM Movies";
 			//Console.WriteLine($"Количество записей:\t{command.ExecuteScalar()}");
