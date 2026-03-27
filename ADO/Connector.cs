@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data;
 using System.Data.SqlClient;
 
 namespace PV_521_ADO
 {
 	class Connector
 	{
+		DataTable table = null;
 		string connection_string;
 		SqlConnection connection;
 
@@ -19,7 +21,7 @@ namespace PV_521_ADO
 			this.connection_string = connection_string;
 			connection = new SqlConnection(connection_string);
 		}
-		public void Select(string cmd)
+		public DataTable Select(string cmd)
 		{
 			connection.Open();
 			SqlCommand command = new SqlCommand(cmd, connection);
@@ -37,6 +39,7 @@ namespace PV_521_ADO
 			}
 			reader.Close();
 			connection.Close();
+			return table;
 		}
 		public void Select(string fields, string tables, string condition = "")
 		{
