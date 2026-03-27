@@ -12,7 +12,6 @@ namespace DBtools
 {
 	public class Connector
 	{
-		DataTable table = new DataTable();
 		string connection_string;
 		SqlConnection connection;
 
@@ -24,12 +23,14 @@ namespace DBtools
 		}
 		public DataTable Select(string cmd)
 		{
+			DataTable table = new DataTable();
 			connection.Open();
 			SqlCommand command = new SqlCommand(cmd, connection);
 
 			SqlDataReader reader = command.ExecuteReader();
 			for (int i = 0; i < reader.FieldCount; i++)
 			{
+				string name = reader.GetName(i);
 				Console.Write(reader.GetName(i) + "\t");
 				table.Columns.Add(reader.GetName(i));
 			}
