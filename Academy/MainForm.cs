@@ -44,6 +44,9 @@ namespace Academy
 		DBtools.Connector connector;
 		Dictionary<string, int> d_directions;
 		Dictionary<string, int> d_groups;
+
+		StudentForm studentForm;
+		//HumanForm humanForm;
 		public MainForm()
 		{
 			InitializeComponent();
@@ -62,6 +65,8 @@ namespace Academy
 			cbStudentsGroup.Items.AddRange(d_groups.Keys.ToArray());
 			cbGroupsDirection.Items.AddRange(d_directions.Keys.ToArray());
 			cbStudentsDirection.Items.AddRange(d_directions.Keys.ToArray());
+
+			
 
 			cbGroupsDirection.SelectedIndexChanged += new EventHandler(cbGroupsDirection_SelectedIndexChanged);
 		}
@@ -99,6 +104,14 @@ namespace Academy
 					$" AND direction={d_directions[cbStudentsDirection.SelectedItem.ToString()]}"
 				);
 			toolStripStatusLabel.Text = $"{status_messages[0]}: {dgvStudents.RowCount - 1}";
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			studentForm = new StudentForm();
+			if (studentForm.ShowDialog() == DialogResult.OK)
+				tabControl_SelectedIndexChanged(tabControl, null);
+
 		}
 	}
 }

@@ -44,6 +44,7 @@
 			this.dgvDisciplines = new System.Windows.Forms.DataGridView();
 			this.tabPageTeachers = new System.Windows.Forms.TabPage();
 			this.dgvTeachers = new System.Windows.Forms.DataGridView();
+			this.buttonAddStudent = new System.Windows.Forms.Button();
 			this.statusStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabPageStudents.SuspendLayout();
@@ -92,6 +93,7 @@
 			// 
 			// tabPageStudents
 			// 
+			this.tabPageStudents.Controls.Add(this.buttonAddStudent);
 			this.tabPageStudents.Controls.Add(this.cbStudentsDirection);
 			this.tabPageStudents.Controls.Add(this.cbStudentsGroup);
 			this.tabPageStudents.Controls.Add(this.dgvStudents);
@@ -109,7 +111,7 @@
 			this.cbStudentsDirection.FormattingEnabled = true;
 			this.cbStudentsDirection.Location = new System.Drawing.Point(177, 6);
 			this.cbStudentsDirection.Name = "cbStudentsDirection";
-			this.cbStudentsDirection.Size = new System.Drawing.Size(437, 24);
+			this.cbStudentsDirection.Size = new System.Drawing.Size(320, 24);
 			this.cbStudentsDirection.TabIndex = 3;
 			this.cbStudentsDirection.SelectedIndexChanged += new System.EventHandler(this.cbStudentsDirection_SelectedIndexChanged);
 			// 
@@ -246,6 +248,16 @@
 			this.dgvTeachers.Size = new System.Drawing.Size(607, 271);
 			this.dgvTeachers.TabIndex = 1;
 			// 
+			// buttonAddStudent
+			// 
+			this.buttonAddStudent.Location = new System.Drawing.Point(524, 8);
+			this.buttonAddStudent.Name = "buttonAddStudent";
+			this.buttonAddStudent.Size = new System.Drawing.Size(75, 23);
+			this.buttonAddStudent.TabIndex = 4;
+			this.buttonAddStudent.Text = "Add";
+			this.buttonAddStudent.UseVisualStyleBackColor = true;
+			this.buttonAddStudent.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -291,6 +303,7 @@
 		private System.Windows.Forms.ComboBox cbGroupsDirection;
 		private System.Windows.Forms.ComboBox cbStudentsDirection;
 		private System.Windows.Forms.ComboBox cbStudentsGroup;
+		private System.Windows.Forms.Button buttonAddStudent;
 	}
 }
 
