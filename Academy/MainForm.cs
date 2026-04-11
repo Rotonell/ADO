@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
-using System.Runtime.InteropServices;
 
 namespace Academy
 {
@@ -18,9 +17,9 @@ namespace Academy
 		{
 			new Query
 				(
-				"last_name,first_name,middle_name,group_name,direction_name",
+				"stud_id,last_name,first_name,middle_name,group_name,direction_name",
 				"Students,Groups,Directions",
-				"[group]=group_id AND [direction]=direction_id"
+				"[group]=group_id AND direction=direction_id"
 				),
 			new Query
 				(
@@ -28,12 +27,12 @@ namespace Academy
 				"Groups,Directions",
 				"direction=direction_id"
 				),
-			new Query("*","Directions"),
-			new Query("*","Disciplines"),
+			new Query("*", "Directions"),
+			new Query("*", "Disciplines"),
 			new Query("*", "Teachers"),
 		};
 		string[] status_messages =
-			{
+		{
 			"Количество студентов",
 			"Количество групп",
 			"Количество направлений",
@@ -42,15 +41,14 @@ namespace Academy
 		};
 		DataGridView[] tables;
 		DBtools.Connector connector;
+		/// ////////////////////////////////////////////////////////////
 		Dictionary<string, int> d_directions;
 		Dictionary<string, int> d_groups;
 
 		StudentForm studentForm;
-		//HumanForm humanForm;
 		public MainForm()
 		{
 			InitializeComponent();
-			//AllocConsole();
 			tables = new DataGridView[] { dgvStudents, dgvGroups, dgvDirections, dgvDisciplines, dgvTeachers };
 			connector = new DBtools.Connector(ConfigurationManager.ConnectionStrings["PV_521_Import"].ConnectionString);
 
@@ -65,13 +63,8 @@ namespace Academy
 			cbStudentsGroup.Items.AddRange(d_groups.Keys.ToArray());
 			cbGroupsDirection.Items.AddRange(d_directions.Keys.ToArray());
 			cbStudentsDirection.Items.AddRange(d_directions.Keys.ToArray());
-
-			
-
-			cbGroupsDirection.SelectedIndexChanged += new EventHandler(cbGroupsDirection_SelectedIndexChanged);
 		}
-		//[DllImport("kernel32.dll")]
-		//public static extern bool AllocConsole();
+
 		private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			int i = tabControl.SelectedIndex;
@@ -106,12 +99,21 @@ namespace Academy
 			toolStripStatusLabel.Text = $"{status_messages[0]}: {dgvStudents.RowCount - 1}";
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void buttonAddStudent_Click(object sender, EventArgs e)
 		{
 			studentForm = new StudentForm();
 			if (studentForm.ShowDialog() == DialogResult.OK)
 				tabControl_SelectedIndexChanged(tabControl, null);
+		}
 
+		private void dgvStudents_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			StudentForm form = new StudentForm
+				(
+				Convert.ToInt32(dgvStudents.Rows[e.RowIndex].Cells["stud_id"].Value)
+				);
+			if (form.ShowDialog() == DialogResult.OK)
+				tabControl_SelectedIndexChanged(tabControl, null);
 		}
 	}
 }
