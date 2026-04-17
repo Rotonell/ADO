@@ -29,19 +29,19 @@
 		private void InitializeComponent()
 		{
 			this.labelLastName = new System.Windows.Forms.Label();
-			this.labelFirstname = new System.Windows.Forms.Label();
+			this.labelFirstName = new System.Windows.Forms.Label();
 			this.labelMiddleName = new System.Windows.Forms.Label();
-			this.labelBirthDay = new System.Windows.Forms.Label();
+			this.labelBirthDate = new System.Windows.Forms.Label();
 			this.tbLastName = new System.Windows.Forms.TextBox();
 			this.tbFirstName = new System.Windows.Forms.TextBox();
 			this.tbMiddleName = new System.Windows.Forms.TextBox();
 			this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
 			this.pbPhoto = new System.Windows.Forms.PictureBox();
 			this.buttonBrowse = new System.Windows.Forms.Button();
-			this.labelEmail = new System.Windows.Forms.Label();
-			this.labelPhone = new System.Windows.Forms.Label();
 			this.tbEmail = new System.Windows.Forms.TextBox();
 			this.tbPhone = new System.Windows.Forms.TextBox();
+			this.labelEmail = new System.Windows.Forms.Label();
+			this.labelPhone = new System.Windows.Forms.Label();
 			this.buttonOK = new System.Windows.Forms.Button();
 			this.buttonCancel = new System.Windows.Forms.Button();
 			this.labelID = new System.Windows.Forms.Label();
@@ -51,136 +51,160 @@
 			// labelLastName
 			// 
 			this.labelLastName.AutoSize = true;
-			this.labelLastName.Location = new System.Drawing.Point(13, 16);
+			this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelLastName.Location = new System.Drawing.Point(75, 20);
 			this.labelLastName.Name = "labelLastName";
-			this.labelLastName.Size = new System.Drawing.Size(69, 16);
+			this.labelLastName.Size = new System.Drawing.Size(110, 25);
 			this.labelLastName.TabIndex = 0;
-			this.labelLastName.Text = "Last name";
+			this.labelLastName.Text = "Фамилия:";
 			// 
-			// labelFirstname
+			// labelFirstName
 			// 
-			this.labelFirstname.AutoSize = true;
-			this.labelFirstname.Location = new System.Drawing.Point(12, 58);
-			this.labelFirstname.Name = "labelFirstname";
-			this.labelFirstname.Size = new System.Drawing.Size(44, 16);
-			this.labelFirstname.TabIndex = 1;
-			this.labelFirstname.Text = "Name";
+			this.labelFirstName.AutoSize = true;
+			this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelFirstName.Location = new System.Drawing.Point(126, 57);
+			this.labelFirstName.Name = "labelFirstName";
+			this.labelFirstName.Size = new System.Drawing.Size(59, 25);
+			this.labelFirstName.TabIndex = 1;
+			this.labelFirstName.Text = "Имя:";
 			// 
 			// labelMiddleName
 			// 
 			this.labelMiddleName.AutoSize = true;
-			this.labelMiddleName.Location = new System.Drawing.Point(12, 100);
+			this.labelMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelMiddleName.Location = new System.Drawing.Point(74, 94);
 			this.labelMiddleName.Name = "labelMiddleName";
-			this.labelMiddleName.Size = new System.Drawing.Size(85, 16);
+			this.labelMiddleName.Size = new System.Drawing.Size(111, 25);
 			this.labelMiddleName.TabIndex = 2;
-			this.labelMiddleName.Text = "Middle name";
+			this.labelMiddleName.Text = "Отчество:";
 			// 
-			// labelBirthDay
+			// labelBirthDate
 			// 
-			this.labelBirthDay.AutoSize = true;
-			this.labelBirthDay.Location = new System.Drawing.Point(12, 142);
-			this.labelBirthDay.Name = "labelBirthDay";
-			this.labelBirthDay.Size = new System.Drawing.Size(61, 16);
-			this.labelBirthDay.TabIndex = 3;
-			this.labelBirthDay.Text = "Birth Day";
+			this.labelBirthDate.AutoSize = true;
+			this.labelBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelBirthDate.Location = new System.Drawing.Point(13, 131);
+			this.labelBirthDate.Name = "labelBirthDate";
+			this.labelBirthDate.Size = new System.Drawing.Size(172, 25);
+			this.labelBirthDate.TabIndex = 3;
+			this.labelBirthDate.Text = "Дата рождения:";
 			// 
 			// tbLastName
 			// 
 			this.tbLastName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
 			this.tbLastName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-			this.tbLastName.Location = new System.Drawing.Point(134, 13);
+			this.tbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.tbLastName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.tbLastName.Location = new System.Drawing.Point(191, 17);
 			this.tbLastName.Name = "tbLastName";
-			this.tbLastName.Size = new System.Drawing.Size(233, 22);
+			this.tbLastName.Size = new System.Drawing.Size(272, 31);
 			this.tbLastName.TabIndex = 4;
 			// 
 			// tbFirstName
 			// 
 			this.tbFirstName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
 			this.tbFirstName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-			this.tbFirstName.Location = new System.Drawing.Point(134, 54);
+			this.tbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.tbFirstName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.tbFirstName.Location = new System.Drawing.Point(191, 54);
 			this.tbFirstName.Name = "tbFirstName";
-			this.tbFirstName.Size = new System.Drawing.Size(233, 22);
+			this.tbFirstName.Size = new System.Drawing.Size(272, 31);
 			this.tbFirstName.TabIndex = 5;
 			// 
 			// tbMiddleName
 			// 
 			this.tbMiddleName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
 			this.tbMiddleName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-			this.tbMiddleName.Location = new System.Drawing.Point(134, 94);
+			this.tbMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.tbMiddleName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.tbMiddleName.Location = new System.Drawing.Point(191, 91);
 			this.tbMiddleName.Name = "tbMiddleName";
-			this.tbMiddleName.Size = new System.Drawing.Size(233, 22);
+			this.tbMiddleName.Size = new System.Drawing.Size(272, 31);
 			this.tbMiddleName.TabIndex = 6;
 			// 
 			// dtpBirthDate
 			// 
-			this.dtpBirthDate.Location = new System.Drawing.Point(134, 139);
+			this.dtpBirthDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.dtpBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtpBirthDate.Location = new System.Drawing.Point(191, 128);
 			this.dtpBirthDate.Name = "dtpBirthDate";
-			this.dtpBirthDate.Size = new System.Drawing.Size(233, 22);
-			this.dtpBirthDate.TabIndex = 8;
+			this.dtpBirthDate.Size = new System.Drawing.Size(272, 31);
+			this.dtpBirthDate.TabIndex = 7;
 			// 
 			// pbPhoto
 			// 
-			this.pbPhoto.BackColor = System.Drawing.SystemColors.ButtonShadow;
+			this.pbPhoto.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.pbPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.pbPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pbPhoto.Location = new System.Drawing.Point(465, 16);
+			this.pbPhoto.Location = new System.Drawing.Point(469, 17);
 			this.pbPhoto.Name = "pbPhoto";
-			this.pbPhoto.Size = new System.Drawing.Size(187, 215);
-			this.pbPhoto.TabIndex = 9;
+			this.pbPhoto.Size = new System.Drawing.Size(176, 216);
+			this.pbPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pbPhoto.TabIndex = 8;
 			this.pbPhoto.TabStop = false;
 			// 
 			// buttonBrowse
 			// 
-			this.buttonBrowse.Location = new System.Drawing.Point(525, 237);
+			this.buttonBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.buttonBrowse.Location = new System.Drawing.Point(469, 239);
 			this.buttonBrowse.Name = "buttonBrowse";
-			this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
-			this.buttonBrowse.TabIndex = 10;
-			this.buttonBrowse.Text = "Browse";
+			this.buttonBrowse.Size = new System.Drawing.Size(176, 34);
+			this.buttonBrowse.TabIndex = 9;
+			this.buttonBrowse.Text = "Обзор";
 			this.buttonBrowse.UseVisualStyleBackColor = true;
-			this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click_1);
-			// 
-			// labelEmail
-			// 
-			this.labelEmail.AutoSize = true;
-			this.labelEmail.Location = new System.Drawing.Point(12, 180);
-			this.labelEmail.Name = "labelEmail";
-			this.labelEmail.Size = new System.Drawing.Size(45, 16);
-			this.labelEmail.TabIndex = 11;
-			this.labelEmail.Text = "E-mail";
-			// 
-			// labelPhone
-			// 
-			this.labelPhone.AutoSize = true;
-			this.labelPhone.Location = new System.Drawing.Point(13, 209);
-			this.labelPhone.Name = "labelPhone";
-			this.labelPhone.Size = new System.Drawing.Size(46, 16);
-			this.labelPhone.TabIndex = 12;
-			this.labelPhone.Text = "Phone";
+			this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
 			// 
 			// tbEmail
 			// 
 			this.tbEmail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
 			this.tbEmail.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-			this.tbEmail.Location = new System.Drawing.Point(134, 180);
+			this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.tbEmail.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.tbEmail.Location = new System.Drawing.Point(191, 165);
 			this.tbEmail.Name = "tbEmail";
-			this.tbEmail.Size = new System.Drawing.Size(233, 22);
-			this.tbEmail.TabIndex = 13;
+			this.tbEmail.Size = new System.Drawing.Size(272, 31);
+			this.tbEmail.TabIndex = 10;
 			// 
 			// tbPhone
 			// 
 			this.tbPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
 			this.tbPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-			this.tbPhone.Location = new System.Drawing.Point(134, 209);
+			this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.tbPhone.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.tbPhone.Location = new System.Drawing.Point(191, 202);
+			this.tbPhone.MaxLength = 16;
 			this.tbPhone.Name = "tbPhone";
-			this.tbPhone.Size = new System.Drawing.Size(233, 22);
-			this.tbPhone.TabIndex = 14;
+			this.tbPhone.Size = new System.Drawing.Size(272, 31);
+			this.tbPhone.TabIndex = 11;
+			// 
+			// labelEmail
+			// 
+			this.labelEmail.AutoSize = true;
+			this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelEmail.Location = new System.Drawing.Point(107, 168);
+			this.labelEmail.Name = "labelEmail";
+			this.labelEmail.Size = new System.Drawing.Size(78, 25);
+			this.labelEmail.TabIndex = 12;
+			this.labelEmail.Text = "E-mail:";
+			// 
+			// labelPhone
+			// 
+			this.labelPhone.AutoSize = true;
+			this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelPhone.Location = new System.Drawing.Point(105, 205);
+			this.labelPhone.Name = "labelPhone";
+			this.labelPhone.Size = new System.Drawing.Size(80, 25);
+			this.labelPhone.TabIndex = 13;
+			this.labelPhone.Text = "Phone:";
 			// 
 			// buttonOK
 			// 
 			this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.buttonOK.Location = new System.Drawing.Point(263, 295);
+			this.buttonOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.buttonOK.Location = new System.Drawing.Point(417, 302);
 			this.buttonOK.Name = "buttonOK";
-			this.buttonOK.Size = new System.Drawing.Size(75, 23);
-			this.buttonOK.TabIndex = 15;
+			this.buttonOK.Size = new System.Drawing.Size(111, 34);
+			this.buttonOK.TabIndex = 14;
 			this.buttonOK.Text = "OK";
 			this.buttonOK.UseVisualStyleBackColor = true;
 			this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
@@ -188,42 +212,44 @@
 			// buttonCancel
 			// 
 			this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.buttonCancel.Location = new System.Drawing.Point(361, 295);
+			this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.buttonCancel.Location = new System.Drawing.Point(534, 302);
 			this.buttonCancel.Name = "buttonCancel";
-			this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-			this.buttonCancel.TabIndex = 16;
+			this.buttonCancel.Size = new System.Drawing.Size(111, 34);
+			this.buttonCancel.TabIndex = 15;
 			this.buttonCancel.Text = "Cancel";
 			this.buttonCancel.UseVisualStyleBackColor = true;
 			// 
 			// labelID
 			// 
 			this.labelID.AutoSize = true;
-			this.labelID.Location = new System.Drawing.Point(13, 302);
+			this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelID.Location = new System.Drawing.Point(13, 322);
 			this.labelID.Name = "labelID";
-			this.labelID.Size = new System.Drawing.Size(0, 16);
-			this.labelID.TabIndex = 17;
+			this.labelID.Size = new System.Drawing.Size(0, 25);
+			this.labelID.TabIndex = 16;
 			// 
 			// HumanForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(666, 330);
+			this.ClientSize = new System.Drawing.Size(659, 348);
 			this.Controls.Add(this.labelID);
 			this.Controls.Add(this.buttonCancel);
 			this.Controls.Add(this.buttonOK);
-			this.Controls.Add(this.tbPhone);
-			this.Controls.Add(this.tbEmail);
 			this.Controls.Add(this.labelPhone);
 			this.Controls.Add(this.labelEmail);
+			this.Controls.Add(this.tbPhone);
+			this.Controls.Add(this.tbEmail);
 			this.Controls.Add(this.buttonBrowse);
 			this.Controls.Add(this.pbPhoto);
 			this.Controls.Add(this.dtpBirthDate);
 			this.Controls.Add(this.tbMiddleName);
 			this.Controls.Add(this.tbFirstName);
 			this.Controls.Add(this.tbLastName);
-			this.Controls.Add(this.labelBirthDay);
+			this.Controls.Add(this.labelBirthDate);
 			this.Controls.Add(this.labelMiddleName);
-			this.Controls.Add(this.labelFirstname);
+			this.Controls.Add(this.labelFirstName);
 			this.Controls.Add(this.labelLastName);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.MaximizeBox = false;
@@ -240,9 +266,9 @@
 		#endregion
 
 		private System.Windows.Forms.Label labelLastName;
-		private System.Windows.Forms.Label labelFirstname;
+		private System.Windows.Forms.Label labelFirstName;
 		private System.Windows.Forms.Label labelMiddleName;
-		private System.Windows.Forms.Label labelBirthDay;
+		private System.Windows.Forms.Label labelBirthDate;
 		private System.Windows.Forms.Button buttonBrowse;
 		private System.Windows.Forms.Label labelEmail;
 		private System.Windows.Forms.Label labelPhone;
